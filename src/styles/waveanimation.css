@@ -1,0 +1,92 @@
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    height: 54px;
+    --gutter: 8px;
+    --boxSize: 4px;
+    width: calc((var(--boxSize) + var(--gutter)) * 13);
+}
+
+.box {
+    transform: scale(.4);
+    height: 100%;
+    width: var(--boxSize);
+    background: linear-gradient(40deg, #364662 20%, #c96850 100%) no-repeat;
+    border-radius: 18px;
+}
+
+.box.active {
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.box1 {
+    animation: quiet;
+}
+
+.box2 {
+    animation: normal;
+}
+
+.box3 {
+    animation: quiet;
+}
+
+.box4 {
+    animation: loud;
+}
+
+.box5 {
+    animation: quiet;
+}
+
+.box6 {
+    animation: normal;
+}
+
+.box7 {
+    animation: quiet;
+}
+
+@keyframes quiet {
+    25%{
+        transform: scale(.6);
+    }
+
+    50% {
+        transform: scale(.4);
+    }
+
+    75% {
+        transform: scale(.8);
+    }
+}
+
+@keyframes normal {
+    25%{
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.4);
+    }
+
+    75% {
+        transform: scale(.6);
+    }
+}
+
+@keyframes loud {
+    25%{
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.4);
+    }
+
+    75% {
+        transform: scale(1.3);
+    }
+}

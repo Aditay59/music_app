@@ -1,0 +1,38 @@
+.entry-body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 10%;
+    overflow: hidden;
+}
+
+.entry-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.entry-right-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.entry-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #c9d0e3;
+    margin: 0px 0px 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.entry-subtitle {
+    font-weight: 400;
+    font-size: 12px;
+    color: #d4d0e37c;
+    margin: 0;
+}
+
