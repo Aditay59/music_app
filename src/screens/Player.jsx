@@ -10,7 +10,7 @@ import Widgets from '../components/Widgets';
 const Player = () => {
 
   const[tracks,setTracks] = useState([]);
-  const[currentTrack,setCurrentTrack] = useState({});
+  const[currentTrack,setCurrentTrack] = useState(null);
   const[currentindex,setCurrentIndex] = useState(0); //handles next and previous tracks
 
   const location = useLocation();
@@ -19,7 +19,7 @@ const Player = () => {
   useEffect(() => {
     if (location.state) {
       if (location.state.isPlaylist) {
-        apiClient.get(`playlists/${location.state.id}/tracks`)
+        apiClient.get(`playlists/${location?.state?.id}/tracks`)
           .then(res => {
             setTracks(res.data.items);
             setCurrentTrack(res.data.items[0]?.track);
@@ -28,10 +28,11 @@ const Player = () => {
             console.log(err);
           });
       } else {
-        apiClient.get(`tracks/${location.state.id}`)
+        apiClient.get(`tracks/${location?.state?.id}`)
           .then(res => {
             setTracks([res.data]);
             setCurrentTrack(res.data);
+            // console.log(res.data);
           })
           .catch(err => {
             console.log(err);
@@ -56,6 +57,8 @@ const Player = () => {
     setCurrentTrack(tracks[currentindex]?.track);
   },[currentindex,tracks])
 
+
+
   return (
     <div className='screen-container flex'>
      
@@ -69,7 +72,7 @@ const Player = () => {
 
       </div>
       <div className='right-player-body'>
-        <SongCard album={currentTrack?.album} />
+        <SongCard album={currentTrack?.album} total={tracks} />
         <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} />
       </div>
     </div>

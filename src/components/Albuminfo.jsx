@@ -1,24 +1,49 @@
+import { useLocation } from 'react-router-dom';
 import '../styles/albumInfo.css';
 
-const Albuminfo = ({album}) => {
+const Albuminfo = ({album, total}) => {
+    console.log(total);
 
+    const { state } = useLocation();
+
+    var name;
+    var type;
+    var release;
+    var total_tracks;
     const artists = [];
 
-    album?.artists?.forEach((ele)=>{
-        artists.push(ele.name); 
-    });
+    if(state.isPlaylist===true) {
+        name = album?.name;
+        type = album?.album_type;
+        release = album?.release_date;
+        total_tracks = album?.total_tracks;
+        album?.artists?.forEach((ele)=>{
+            artists.push(ele.name); 
+        });
+    } else {
+        name = total[0]?.album?.name;
+        type = total[0]?.album?.album_type;
+        release = total[0]?.album?.release_date;
+        total_tracks = total[0]?.album?.total_tracks;
+        total[0]?.album?.artists?.forEach((ele)=>{
+            artists.push(ele.name);
+        })
+    }
+
+
+    
 
 
   return (
     <div className="albumInfo-card">
         <div className="albumName-container">
-            <marquee scrollamount={4}> <p>{album?.name + " - " + artists?.join(", ")}</p> </marquee>
+            <marquee scrollamount={4}> <p>{name + " - " + artists?.join(", ")}</p> </marquee>
         </div>
         <div className="albumInfo">
-            <p>{`${album?.name} is an ${album?.album_type} by ${artists.join(", ")} with ${album?.total_tracks} track(s).`}</p>
+            <p>{`${name} is an ${type} by ${artists.join(", ")} with ${total_tracks} track(s).`}</p>
         </div>
         <div className="album-release">
-            <p>Release Date: {album?.release_date} </p>
+            <p>Release Date: {release} </p>
         </div>
     </div>
   )
