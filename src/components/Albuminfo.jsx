@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import '../styles/albumInfo.css';
 
 const Albuminfo = ({album, total}) => {
-    console.log(total);
+    // console.log(total);
 
     const { state } = useLocation();
 
@@ -12,7 +12,7 @@ const Albuminfo = ({album, total}) => {
     var total_tracks;
     const artists = [];
 
-    if(state.isPlaylist===true) {
+    if(state?.isPlaylist===true) {
         name = album?.name;
         type = album?.album_type;
         release = album?.release_date;

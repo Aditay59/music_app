@@ -13,7 +13,7 @@ const Favourites = () => {
 
   useEffect(() =>{
     apiClient.get('me/tracks').then(res =>{
-      console.log(res.data.items);
+      // console.log(res.data.items);
       setLiked(res.data.items);
     })
   },[])

@@ -1,7 +1,7 @@
 import '../styles/sidebar.css';
 import SidebarButton from './SidebarButton';
 import { MdFavorite, MdSpaceDashboard } from "react-icons/md";
-import { FaGripfire, FaPlay, FaSignOutAlt }  from "react-icons/fa";
+import { FaGripfire, FaPlay, FaSignOutAlt, FaSearch }  from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
 import { useEffect, useState } from 'react';
 import apiClient,{clearClientToken} from '../Spotify/Spotify';
@@ -29,7 +29,7 @@ const Sidebar = () => {
      
       <div>
         <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} />
-        <SidebarButton title="Trending" to="/trending" icon={<FaGripfire />} />
+        <SidebarButton title="Search" to="/search" icon={<FaSearch />} />
         <SidebarButton title="Player" to="/player" icon={<FaPlay />} />
         <SidebarButton title="Favourites" to="/favourites" icon={<MdFavorite />} />
         <SidebarButton title="Library" to="/" icon={<IoLibrary />} />

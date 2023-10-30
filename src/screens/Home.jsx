@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Library from './Library';
 import Feed from './Feed';
-import Trending from './Trending';
+import Search from './Search';
 import Player from './Player';
 import Favourites from './Favourites';
 import '../styles/Home.css';
@@ -42,7 +42,7 @@ const Home = () => {
         <Routes>
           <Route path='/' element={<Library />} />
           <Route path='/feed' element={<Feed />} />
-          <Route path='/trending' element={<Trending />} />
+          <Route path='/search' element={<Search />} />
           <Route path='/player' element={<Player />} />
           <Route path='/favourites' element={<Favourites />} />
         </Routes> 

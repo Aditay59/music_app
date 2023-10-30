@@ -7,11 +7,11 @@ const SongCard = ({album, total}) => {
 
   const { state } = useLocation();
 
-    console.log(album);
-    console.log(total);
+    // console.log(album);
+    // console.log(total);
     var src;
 
-    if(state.isPlaylist===true) {
+    if(state?.isPlaylist===true) {
       src = album?.images[0]?.url;
     } else {
       src = total[0]?.album?.images[0]?.url;
