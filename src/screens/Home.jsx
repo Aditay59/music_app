@@ -8,7 +8,7 @@ import '../styles/Home.css';
 import Sidebar from '../components/Sidebar';
 import Login from '../auth/login';
 import { useEffect, useState } from 'react';
-import { setClientToken } from '../Spotify/Spotify';
+import { clearClientToken, setClientToken } from '../Spotify/Spotify';
 
 const Home = () => {
 
@@ -30,7 +30,7 @@ const Home = () => {
       setToken(token);
       setClientToken(token);
     }
-
+    
   },[])
 
   return (
