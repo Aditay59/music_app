@@ -26,7 +26,9 @@ const Favourites = () => {
 
   return (
     <div className='screen-container'>
+      <div className='title-container'>
       <h1 className='screen-title'>Liked Songs</h1>
+      </div>
       <div className='songs-wrapper'>
         {
           liked? liked?.map((track,index)=>(

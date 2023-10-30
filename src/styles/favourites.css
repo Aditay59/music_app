@@ -2,12 +2,16 @@
     color: #c4d0e3;
 }
 
+.title-container {
+    margin-left: 5%;
+}
+
 .songs-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 10px;
-    height: 85%;
+    height: 80%;
     overflow: auto;
     padding: 10px;
 }

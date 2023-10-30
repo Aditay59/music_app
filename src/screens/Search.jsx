@@ -19,23 +19,25 @@ const Search = () => {
   
   const handleSearch = (e) => {
     if(e.key === "Enter") {
-      console.log(searchText);
       apiClient.get(`/search?q=${searchText}&type=track`).then (res =>{
-        console.log(res.data.tracks.items);
+        // console.log(res.data.tracks.items);
         setSearchResult(res.data.tracks.items);
       })
+      setSearchText("");
     }
   }
 
   return (
     <div className='screen-container'>
+     
       <div className='search-container'>
      
       <h1 className='screen-title'>Search Here</h1>
      
       <div className='search-bar'>
-        <input size={26} type='text' value={searchText} placeholder='What do you want to listen to?' onChange={(e)=>{setSearchText(e.target.value)}} onKeyDown={(e)=>{handleSearch(e)}} />
+        <input className='input' type='text' autoComplete='off' value={searchText} placeholder='What do you want to listen to?' onChange={(e)=>{setSearchText(e.target.value)}} onKeyDown={(e)=>{handleSearch(e)}} />
       </div>
+     
       </div>
 
       <div className='result-wrapper'>
