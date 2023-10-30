@@ -24,6 +24,8 @@ const Favourites = () => {
     navigate('/player', {state: {id: id, isPlaylist: false}});
   }
 
+  let artists = [];
+
   return (
     <div className='screen-container'>
       <div className='title-container'>
@@ -37,8 +39,11 @@ const Favourites = () => {
               <p className='music-title'> {track?.track.name} </p>
               <p className='music-subtitle'>
                 {
-                  track?.track?.artists?.map((item,index)=>(
-                    <span key={index}> {item.name}  </span>
+                  track?.track?.artists?.map((item, index)=>(
+                    <span key={index}>
+                      {item.name}  
+                      {index !== track.track.artists.length - 1 && ' | '}
+                    </span>
                   ))
                 }
               </p>

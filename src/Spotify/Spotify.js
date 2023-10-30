@@ -12,6 +12,7 @@ const apiClient = axios.create({
     baseURL: 'https://api.spotify.com/v1/',
 });
 
+
 export const setClientToken = (token) => {
     apiClient.interceptors.request.use(async (config) => {
         config.headers.Authorization = "Bearer " + token;
@@ -22,9 +23,9 @@ export const setClientToken = (token) => {
 export const clearClientToken = () => {
     apiClient.interceptors.request.use(async (config) => {
       delete config.headers.Authorization;
+      localStorage.removeItem('token');
       return config;
     });
-  };
-  
+  };  
 
 export default apiClient;

@@ -47,8 +47,10 @@ const Search = () => {
               <img className='song-img' src={track?.album?.images[0]?.url} alt='poster-art' height={150} width={150} />
               <p className='music-title' > {track?.name} </p>
               <p className='music-subtitle' > {
-                track?.artists?.map((item,index)=>(
-                  <span key={index}> {item?.name} </span>
+                track?.artists.map((item,index)=>(
+                  <span key={index}>
+                    {item?.name} 
+                  </span>
                 ))
                 } </p>
                 <p className='release_date' > {track?.album?.release_date} </p>
