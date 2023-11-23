@@ -22,6 +22,8 @@
     font-size: 50px;
     font-weight: bold;
     color: #c4d0e3;
+    background: transparent;
+    /* -webkit-text-stroke: 2px #c4d0e3; */
     /* white-space: nowrap; */
     /* overflow: hidden; */
     text-overflow: ellipsis;

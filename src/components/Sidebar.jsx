@@ -28,7 +28,7 @@ const Sidebar = () => {
       <img src={image} alt='profile' className='profile-img' />
      
       <div>
-        <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} />
+        {/* <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} /> */}
         <SidebarButton title="Search" to="/search" icon={<FaSearch />} />
         <SidebarButton title="Player" to="/player" icon={<FaPlay />} />
         <SidebarButton title="Favourites" to="/favourites" icon={<MdFavorite />} />

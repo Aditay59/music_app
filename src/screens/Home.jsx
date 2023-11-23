@@ -8,7 +8,7 @@ import '../styles/Home.css';
 import Sidebar from '../components/Sidebar';
 import Login from '../auth/login';
 import { useEffect, useState } from 'react';
-import { clearClientToken, setClientToken } from '../Spotify/Spotify';
+import { setClientToken } from '../Spotify/Spotify';
 
 const Home = () => {
 
@@ -41,7 +41,7 @@ const Home = () => {
         <Sidebar />
         <Routes>
           <Route path='/' element={<Library />} />
-          <Route path='/feed' element={<Feed />} />
+          // <Route path='/feed' element={<Feed />} />
           <Route path='/search' element={<Search />} />
           <Route path='/player' element={<Player />} />
           <Route path='/favourites' element={<Favourites />} />

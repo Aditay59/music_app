@@ -5,6 +5,7 @@
     background-color: #1E2A3E;
     border-radius: 30px;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     opacity: 1;
     background-image: repeating-radial-gradient(

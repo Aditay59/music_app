@@ -1,18 +1,20 @@
 
 import '../styles/globalStyles.css';
-import APIKit from '../Spotify/Spotify';
+// import APIKit from '../Spotify/Spotify';
 import { useEffect, useState } from 'react';
 import '../styles/library.css';
 import { IconContext } from 'react-icons';
 import {AiFillPlayCircle} from 'react-icons/ai'
 import { useNavigate } from 'react-router';
+import apiClient from '../Spotify/Spotify';
 
 const Library = () => {
 
   const [playlists, setPlaylists] = useState(null);
 
   useEffect(() => {
-    APIKit.get("me/playlists").then((response)=>{
+    apiClient.get("me/playlists").then((response)=>{
+      console.log(response.data.items)
       setPlaylists(response.data.items);
     })
   },[])
