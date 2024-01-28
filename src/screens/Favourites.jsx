@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const Favourites = () => {
 
   const [liked, setLiked] = useState(null);
-  const [currentTrack, setCurrentTrack] = useState(null);
+  // const [currentTrack, setCurrentTrack] = useState(null);
 
   useEffect(() =>{
     apiClient.get('me/tracks').then(res =>{
@@ -24,7 +24,7 @@ const Favourites = () => {
     navigate('/player', {state: {id: id, isPlaylist: false}});
   }
 
-  let artists = [];
+  // let artists = [];
 
   return (
     <div className='screen-container'>

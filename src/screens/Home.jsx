@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Library from './Library';
-import Feed from './Feed';
+// import Feed from './Feed';
 import Search from './Search';
 import Player from './Player';
 import Favourites from './Favourites';
@@ -32,7 +32,9 @@ const Home = () => {
     }
     
   },[])
-
+/**
+* <Route path='/feed' element={<Feed />} /> 
+* */ 
   return (
     !token ?
     <Login /> :
@@ -41,7 +43,6 @@ const Home = () => {
         <Sidebar />
         <Routes>
           <Route path='/' element={<Library />} />
-          // <Route path='/feed' element={<Feed />} />
           <Route path='/search' element={<Search />} />
           <Route path='/player' element={<Player />} />
           <Route path='/favourites' element={<Favourites />} />
